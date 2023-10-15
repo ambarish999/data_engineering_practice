@@ -1,7 +1,7 @@
 import requests
 import os
 # not needed when running in Docker.
-from install import install
+from helpers.install import install
 import io
 import zipfile
 from urllib.parse import urlparse, unquote
@@ -27,7 +27,7 @@ download_uris = [
 def main():
     # create directory `downloads` if it doesn't exist
     try:
-        os.mkdir('/downloads')
+        os.mkdir('Exercises/Exercise-1/downloads')
     except FileExistsError:
         print("Directory already exists!")
 
@@ -47,6 +47,8 @@ def main():
                 print("Error: ", e)
         else:
             print(f"This URL {uri} is not valid!")
+
+print("")
 
 
 if __name__ == "__main__":
